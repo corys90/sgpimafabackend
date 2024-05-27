@@ -1,0 +1,72 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.5">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="MySql.EntityFrameworkCore" Version="8.0.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="Models\" />
+    <Folder Include="PosFacturacion\Application\" />
+    <Folder Include="PosFacturacion\Errors\" />
+    <Folder Include="PosDevolucionProductoVendido\Application\" />
+    <Folder Include="PosDevolucionProductoVendido\Errors\" />
+    <Folder Include="PosClientes\Application\" />
+    <Folder Include="PosClientes\Errors\" />
+    <Folder Include="PosCajaPagosAFavor\Application\" />
+    <Folder Include="PosCajaPagosAFavor\Errors\" />
+    <Folder Include="PosCajaPagoFactura\Application\" />
+    <Folder Include="PosCajaPagoFactura\Errors\" />
+    <Folder Include="PosCajaEstado\Application\" />
+    <Folder Include="PosCajaEstado\Errors\" />
+    <Folder Include="PosCajaArqueo\Application\" />
+    <Folder Include="PosCajaArqueo\Errors\" />
+    <Folder Include="PosCaja\Application\" />
+    <Folder Include="PosCaja\Errors\" />
+    <Folder Include="PosFacturaDetalle\Application\" />
+    <Folder Include="PosFacturaDetalle\Errors\" />
+    <Folder Include="InventarioProducto\Application\" />
+    <Folder Include="InventarioProducto\Errors\" />
+    <Folder Include="PosInventarioProducto\Application\" />
+    <Folder Include="PosInventarioProducto\Errors\" />
+    <Folder Include="SedePos\Application\" />
+    <Folder Include="SedePos\Errors\" />
+    <Folder Include="PosVendedor\Application\" />
+    <Folder Include="PosVendedor\Errors\" />
+    <Folder Include="PosUnidadesMedida\Application\" />
+    <Folder Include="PosUnidadesMedida\Errors\" />
+    <Folder Include="PosTipoProducto\Application\" />
+    <Folder Include="PosTipoProducto\Errors\" />
+    <Folder Include="PosTipoPagosAFavor\Application\" />
+    <Folder Include="PosTipoPagosAFavor\Errors\" />
+    <Folder Include="PosTipoIdCliente\Application\" />
+    <Folder Include="PosTipoIdCliente\Errors\" />
+    <Folder Include="PosTipoEstadoPosCaja\Application\" />
+    <Folder Include="PosTipoEstadoPosCaja\Errors\" />
+    <Folder Include="PosTipoEstadoCaja\Application\" />
+    <Folder Include="PosTipoEstadoCaja\Errors\" />
+    <Folder Include="PosTipoEmbalaje\Application\" />
+    <Folder Include="PosTipoEmbalaje\Errors\" />
+    <Folder Include="PosProductoCompuesto\Application\" />
+    <Folder Include="PosProductoCompuesto\Errors\" />
+    <Folder Include="PosMovimientoInventario\Application\" />
+    <Folder Include="PosMovimientoInventario\Errors\" />
+  </ItemGroup>
+
+</Project>

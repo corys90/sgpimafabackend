@@ -1,0 +1,134 @@
+﻿using Microsoft.EntityFrameworkCore;
+using sgpimafaback.Context;
+using sgpimafaback.Models;
+
+
+namespace sgpimafaback.PosTipoEmbalajeServices.Domain.Services
+{
+    public class PostipoembalajeServices
+    {
+        public Sgpimafa2Context _DB;
+
+        public PostipoembalajeServices(Sgpimafa2Context DB)
+        {
+            _DB = DB;
+        }
+
+        public IEnumerable<PostipoembalajeModel> GetAll()
+        {
+            try
+            {
+                return _DB.Postipoembalajes.ToList();
+            }
+            catch (Exception e)
+            {
+
+                throw new Exception($"Error: Interno del servidor o BD. Contacte al administrador del sistema - ({e.Message})");
+
+            }
+        }
+
+        public PostipoembalajeModel GetById(int id)
+        {
+            try
+            {
+                var resultado = _DB.Postipoembalajes.Find(id);
+                if (resultado != null)
+                {
+                    return resultado;
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            catch (Exception e)
+            {
+
+                throw new Exception($"Error: Interno del servidor o BD. Contacte al administrador del sistema - ({e.Message})");
+
+            }
+        }
+
+        public PostipoembalajeModel Create(PostipoembalajeModel data)
+        {
+            try
+            {
+
+                var prd = _DB.Postipoembalajes.Where(rec => (rec.Nombre.Equals(data.Nombre)));
+                if (prd.Any())
+                {
+                    return null;
+                }
+
+                _DB.Postipoembalajes.Add(data);
+                _DB.SaveChanges();
+
+                // Retorna el objeto con la información de actualizada
+                return data;
+
+            }
+            catch (Exception e)
+            {
+
+                throw new Exception($"Error: Interno del servidor o BD. Contacte al administrador del sistema - ({e.Message})");
+
+            }
+        }
+
+        public PostipoembalajeModel Update(PostipoembalajeModel data)
+        {
+            try
+            {
+                var newData = _DB.Postipoembalajes.Where(rec => (rec.Id == data.Id) && (rec.Nombre.Equals(data.Nombre)));
+
+                if (newData.Count() <= 0)
+                {
+                    return null;
+                }
+
+                _DB.Entry(data).State = EntityState.Modified;
+                var ntask = _DB.SaveChanges();
+
+                var oData = _DB.Postipoembalajes.Find(data.Id);
+
+                // Retorna el objeto con la información de actualizada
+                return oData;
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Error: Interno del servidor o BD ({e.Message})");
+
+            }
+        }
+
+        public bool Delete(int id)
+        {
+            try
+            {
+                var newData = _DB.Postipoembalajes.Find(id);
+                if (newData != null)
+                {
+                    // Retorna el objeto con la información de actualizada
+                    var ntask = _DB.Postipoembalajes.Remove(newData);
+                    _DB.SaveChanges();
+
+                    // Para efectos de auditoria, el user que realiza la operación sale del token del JWT 
+
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Error: Interno del servidor o BD ({e.Message})");
+
+            }
+        }
+
+    }
+}

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34902.65
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sgpimafaback", "sgpimafaback.csproj", "{CBE556AE-650B-411D-B4AC-BCDBA6F63F73}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CBE556AE-650B-411D-B4AC-BCDBA6F63F73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBE556AE-650B-411D-B4AC-BCDBA6F63F73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBE556AE-650B-411D-B4AC-BCDBA6F63F73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBE556AE-650B-411D-B4AC-BCDBA6F63F73}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {270BC374-57B5-4227-A35C-408281A0DBE3}
+	EndGlobalSection
+EndGlobal

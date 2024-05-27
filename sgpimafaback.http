@@ -1,0 +1,6 @@
+@sgpimafaback_HostAddress = http://localhost:5118
+
+GET {{sgpimafaback_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
