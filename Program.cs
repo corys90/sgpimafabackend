@@ -21,6 +21,7 @@ using sgpimafaback.PosTipoProducto.Domain.Services;
 using sgpimafaback.PosVendedor.Domain.Services;
 using sgpimafaback.SedePos.Domain.Services;
 using sgpimafaback.InventarioProducto.Domain.Services;
+using sgpimafaback.UtiliatriesApi.Domain.Services;
 
 
 namespace sgpimafaback
@@ -66,6 +67,7 @@ namespace sgpimafaback
             builder.Services.AddScoped<PosunidadmedidaServices>();
             builder.Services.AddScoped<PosvendedorServices>();
             builder.Services.AddScoped<SedeposServices>();
+            builder.Services.AddScoped<utilitariesapiServices>();
 
 
             //Configuracion CORS

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using sgpimafaback.InventarioProducto.Domain.Entities;
+using System;
 using System.Collections.Generic;
 
 namespace sgpimafaback.PosInventarioProducto.Domain.Entities;
@@ -60,4 +61,9 @@ public partial class PosinventarioproductoModel
     public DateTime? CreatedAt { get; set; }
 
     public DateTime? UpdatedAt { get; set; }
+
+    public static explicit operator PosinventarioproductoModel(inventarioproductoModel v)
+    {
+        throw new NotImplementedException();
+    }
 }

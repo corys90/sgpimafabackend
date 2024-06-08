@@ -77,7 +77,7 @@ namespace sgpimafaback.PosInventarioProducto.Domain.Services
         {
             try
             {
-                var prd = _DB.Posinventarioproductos.Where((PosinventarioproductoModel rec) => (rec.IdCodigo == data.IdCodigo));
+                var prd = _DB.Posinventarioproductos.Where((PosinventarioproductoModel rec) => (rec.IdCodigo == data.IdCodigo) && (rec.IdPos == data.IdPos));
                 if (prd.Any())
                 {
                     return null;
