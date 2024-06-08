@@ -174,7 +174,7 @@ namespace sgpimafaback.PosMovimientoInventario.Infraestructure.Controllers
                 }
                 catch (Exception e)
                 {
-                    _logger.LogError($"PosvendedorController(Post): {e.Message}", e);
+                    _logger.LogError($"posmovimientoinventarioController(Post): {e.Message}", e);
                     return new ContentResult
                     {
                         StatusCode = (int?)HttpStatusCode.InternalServerError,

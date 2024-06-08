@@ -1,6 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.EntityFrameworkCore;
 using sgpimafaback.Context;
+using sgpimafaback.InventarioProducto.Domain.Entities;
+using sgpimafaback.PosInventarioProducto.Domain.Entities;
+using sgpimafaback.PosInventarioProducto.Domain.Services;
 using sgpimafaback.PosMovimientoInventario.Domain.Entities;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Drawing;
 
 
 namespace sgpimafaback.PosMovimientoInventarioServices.Domain.Services
@@ -55,9 +61,41 @@ namespace sgpimafaback.PosMovimientoInventarioServices.Domain.Services
         {
             try
             {
-
+                // añade el registro de ingreso de inventario
                 _DB.Posmovimientoinventarios.Add(data);
                 _DB.SaveChanges();
+
+                // obtiene el producto del inventario general
+                inventarioproductoModel newPrd = _DB.inventarioproductos.First(reg => (reg.IdCodigo == data.IdCodigo));
+
+                // obtiene el producto del inventario del POS
+                PosinventarioproductoModel prd = _DB.Posinventarioproductos.FirstOrDefault(reg => (reg.IdCodigo == data.IdCodigo) && (reg.IdPos == data.IdPos));
+                if (prd != null)
+                {
+                    prd.Cantidad = prd.Cantidad + data.Cantidad;
+                    _DB.SaveChanges();
+                }
+                else
+                {
+                    /*static void EntityFrameworkMySQLExampleUpdateRecord()
+                    {
+                        using (var dbContext = new MyDbContext())
+                        {
+                            // var record6 = dbContext.TestModels.Where(record => record.ID == 4).FirstOrDefault();
+                            var record6 = new TestModel { ID = 4, Value = "EF Core !" };
+                            dbContext.Attach(record6);
+                            dbContext.Entry(record6).Property(r => r.Value).IsModified = true;
+                            dbContext.SaveChanges();
+                        }
+                    }*/
+
+                    PosinventarioproductoModel rvPrd = new PosinventarioproductoModel();
+                    rvPrd = (PosinventarioproductoModel) newPrd;
+                    //rvPrd.Cantidad = data.Cantidad;
+                    _DB.Posinventarioproductos.Add(rvPrd);
+                    _DB.SaveChanges();
+
+                }
 
                 // Retorna el objeto con la información de actualizada
                 return data;

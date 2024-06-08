@@ -21,8 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
     <Folder Include="PosFacturacion\Application\" />
     <Folder Include="PosFacturacion\Errors\" />
     <Folder Include="PosDevolucionProductoVendido\Application\" />
@@ -45,6 +43,8 @@
     <Folder Include="InventarioProducto\Errors\" />
     <Folder Include="PosInventarioProducto\Application\" />
     <Folder Include="PosInventarioProducto\Errors\" />
+    <Folder Include="UtiliatriesApi\Application\" />
+    <Folder Include="UtiliatriesApi\Errors\" />
     <Folder Include="SedePos\Application\" />
     <Folder Include="SedePos\Errors\" />
     <Folder Include="PosVendedor\Application\" />
