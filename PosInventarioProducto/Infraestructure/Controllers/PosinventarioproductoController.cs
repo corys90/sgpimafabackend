@@ -110,7 +110,7 @@ namespace sgpimafaback.PosInventarioProducto.Infraestructure.Controllers
             }
         }
 
-        // Recibe el CodigoProducto 
+        // Recibe el Pos/CodigoProducto 
         [HttpGet("getProducto/{id}")]
         public async Task<ActionResult<PosinventarioproductoModel>> GetByProductoId(string id)
         {
@@ -131,6 +131,76 @@ namespace sgpimafaback.PosInventarioProducto.Infraestructure.Controllers
                 {
 
                     var resultado = _Getlist.GetByProductoId(Idd);
+                    if (resultado != null)
+                    {
+                        var response = new
+                        {
+                            StatusCode = HttpStatusCode.OK,
+                            Messages = Array.Empty<string>(),
+                            Data = new PosinventarioproductoModel[] { resultado }
+                        };
+                        return Ok(response);
+                    }
+                    else
+                    {
+                        return NotFound(new
+                        {
+                            StatusCode = HttpStatusCode.NotFound,
+                            Messages = new string[] { "No econtrado" },
+                            Data = new PosinventarioproductoModel[] { }
+                        });
+                    }
+                }
+                catch (Exception e)
+                {
+                    _logger.LogError($"PosinventarioproductoController(GetById {id}):   {e.Message}", e);
+                    return new ContentResult
+                    {
+                        StatusCode = (int?)HttpStatusCode.InternalServerError,
+                        Content = "Error: Interno del servidor o BD. Contacte al administrador del sistema",
+                    };
+                }
+
+            }
+            else
+            {
+                return BadRequest(new
+                {
+                    StatusCode = HttpStatusCode.BadRequest,
+                    Messages = ErrMsjs,
+                    Data = new PosinventarioproductoModel[] { }
+                });
+            }
+        }
+
+        // Recibe el CodigoProducto 
+        [HttpGet("Pos/{posId}/GetByProductoId/{id}")]
+        public async Task<ActionResult<PosinventarioproductoModel>> GetByPosProductoId(string posId, string id)
+        {
+            List<string> ErrMsjs = new List<string>();
+            bool esNumerico = int.TryParse(id, out int Idd);
+
+            //Valida el id y que contenga un valor númerico
+            if (!esNumerico)
+            {
+                ErrMsjs.Add("Id:El campo Id no existe o no contiene un valor válido");
+            }
+
+            esNumerico = int.TryParse(posId, out int IdPos);
+            //Valida el id y que contenga un valor númerico
+            if (!esNumerico)
+            {
+                ErrMsjs.Add("PoId:El campo PosId no existe o no contiene un valor válido");
+            }
+
+            //Valida el campo Nombre
+            if (ErrMsjs.Count <= 0)
+            {
+
+                try
+                {
+
+                    var resultado = _Getlist.GetByPosProductoId(IdPos, Idd);
                     if (resultado != null)
                     {
                         var response = new

@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using System.Reflection;
 using System.Text.RegularExpressions;
 
 namespace sgpimafaback
@@ -48,6 +49,15 @@ namespace sgpimafaback
             {
                 return false;
             }
+        }
+
+        public static string GetPropiedades(Object o)
+        {
+            Type t = o.GetType();
+            PropertyInfo[] pis = t.GetProperties();
+            string[] valores = pis.Select(p => p.Name + " : " + p.GetValue(o)).ToArray();
+            string delimitados = string.Join(",", valores);
+            return delimitados;
         }
 
     }

@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\corys\\Desktop\\SGPImafa\\sgpimafaback\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CBE556AE-650B-411D-B4AC-BCDBA6F63F73}|sgpimafaback.csproj|c:\\users\\corys\\desktop\\sgpimafa\\sgpimafaback\\posmovimientoinventario\\infraestructure\\controllers\\posmovimientoinventariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBE556AE-650B-411D-B4AC-BCDBA6F63F73}|sgpimafaback.csproj|solutionrelative:posmovimientoinventario\\infraestructure\\controllers\\posmovimientoinventariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CBE556AE-650B-411D-B4AC-BCDBA6F63F73}|sgpimafaback.csproj|c:\\users\\corys\\desktop\\sgpimafa\\sgpimafaback\\posinventarioproducto\\domain\\services\\posinventarioproductoservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBE556AE-650B-411D-B4AC-BCDBA6F63F73}|sgpimafaback.csproj|solutionrelative:posinventarioproducto\\domain\\services\\posinventarioproductoservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CBE556AE-650B-411D-B4AC-BCDBA6F63F73}|sgpimafaback.csproj|c:\\users\\corys\\desktop\\sgpimafa\\sgpimafaback\\posmovimientoinventario\\domain\\services\\posmovimientoinventarioservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBE556AE-650B-411D-B4AC-BCDBA6F63F73}|sgpimafaback.csproj|solutionrelative:posmovimientoinventario\\domain\\services\\posmovimientoinventarioservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CBE556AE-650B-411D-B4AC-BCDBA6F63F73}|sgpimafaback.csproj|c:\\users\\corys\\desktop\\sgpimafa\\sgpimafaback\\posmovimientoinventario\\infraestructure\\controllers\\posmovimientoinventariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBE556AE-650B-411D-B4AC-BCDBA6F63F73}|sgpimafaback.csproj|solutionrelative:posmovimientoinventario\\infraestructure\\controllers\\posmovimientoinventariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -17,49 +17,43 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 240,
-          "SelectedChildIndex": -1,
+          "DockedWidth": 97,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 268,
-          "SelectedChildIndex": 0,
-          "Children": [
+            },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "PosMovimientoInventarioController.cs",
               "DocumentMoniker": "C:\\Users\\corys\\Desktop\\SGPImafa\\sgpimafaback\\PosMovimientoInventario\\Infraestructure\\Controllers\\PosMovimientoInventarioController.cs",
               "RelativeDocumentMoniker": "PosMovimientoInventario\\Infraestructure\\Controllers\\PosMovimientoInventarioController.cs",
               "ToolTip": "C:\\Users\\corys\\Desktop\\SGPImafa\\sgpimafaback\\PosMovimientoInventario\\Infraestructure\\Controllers\\PosMovimientoInventarioController.cs",
               "RelativeToolTip": "PosMovimientoInventario\\Infraestructure\\Controllers\\PosMovimientoInventarioController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAK4AAAAjAAAA",
+              "ViewState": "AQIAALgAAAAAAAAAAAAYwM0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T11:59:10.673Z",
+              "WhenOpened": "2024-06-15T16:37:40.109Z",
               "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedWidth": 155,
+          "DockedWidth": 270,
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PosMovimientoInventarioServices.cs",
-              "DocumentMoniker": "C:\\Users\\corys\\Desktop\\SGPImafa\\sgpimafaback\\PosMovimientoInventario\\Domain\\Services\\PosMovimientoInventarioServices.cs",
-              "RelativeDocumentMoniker": "PosMovimientoInventario\\Domain\\Services\\PosMovimientoInventarioServices.cs",
-              "ToolTip": "C:\\Users\\corys\\Desktop\\SGPImafa\\sgpimafaback\\PosMovimientoInventario\\Domain\\Services\\PosMovimientoInventarioServices.cs",
-              "RelativeToolTip": "PosMovimientoInventario\\Domain\\Services\\PosMovimientoInventarioServices.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAF0AAAAWAAAA",
+              "DocumentIndex": 0,
+              "Title": "PosinventarioproductoServices.cs",
+              "DocumentMoniker": "C:\\Users\\corys\\Desktop\\SGPImafa\\sgpimafaback\\PosInventarioProducto\\Domain\\Services\\PosinventarioproductoServices.cs",
+              "RelativeDocumentMoniker": "PosInventarioProducto\\Domain\\Services\\PosinventarioproductoServices.cs",
+              "ToolTip": "C:\\Users\\corys\\Desktop\\SGPImafa\\sgpimafaback\\PosInventarioProducto\\Domain\\Services\\PosinventarioproductoServices.cs",
+              "RelativeToolTip": "PosInventarioProducto\\Domain\\Services\\PosinventarioproductoServices.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAowHQAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T02:33:57.21Z",
+              "WhenOpened": "2024-06-16T17:14:54.285Z",
               "EditorCaption": ""
             }
           ]

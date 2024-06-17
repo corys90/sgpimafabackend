@@ -1,6 +1,10 @@
 
 using System.Net;
 using Microsoft.AspNetCore.Mvc;
+using sgpimafaback.InventarioProducto.Domain.Entities;
+using sgpimafaback.InventarioProducto.Domain.Services;
+using sgpimafaback.PosInventarioProducto.Domain.Entities;
+using sgpimafaback.PosInventarioProducto.Domain.Services;
 using sgpimafaback.PosMovimientoInventario.Domain.Entities;
 using sgpimafaback.PosMovimientoInventarioServices.Domain.Services;
 
@@ -13,12 +17,16 @@ namespace sgpimafaback.PosMovimientoInventario.Infraestructure.Controllers
     {
 
         private readonly posmovimientoinventarioServices _Getlist;
+        private readonly inventarioproductoServices _invPrd;
+        private readonly PosinventarioproductoServices _posInvPrd;
         private readonly ILogger<PosMovimientoInventarioController> _logger;
 
-        public PosMovimientoInventarioController(posmovimientoinventarioServices getList, ILogger<PosMovimientoInventarioController> logger)
+        public PosMovimientoInventarioController(posmovimientoinventarioServices getList, inventarioproductoServices invPrd, PosinventarioproductoServices posinvPrd, ILogger<PosMovimientoInventarioController> logger)
         {
             _logger = logger;
             _Getlist = getList;
+            _invPrd = invPrd;
+            _posInvPrd = posinvPrd;
         }
 
         [HttpGet]
@@ -153,6 +161,52 @@ namespace sgpimafaback.PosMovimientoInventario.Infraestructure.Controllers
                     var resultado = _Getlist.Create(body);
                     if (resultado != null)
                     {
+                        // obtiene el producto objeto de movimiento del invenatrio de productos
+                        inventarioproductoModel prd = _invPrd.GetByProductoId(body.IdCodigo);
+                        
+                        // obtiene el producto objeto de movimiento del invenatrio de productos
+                        PosinventarioproductoModel posprd = _posInvPrd.GetByPosProductoId(body.IdPos, body.IdCodigo);
+
+                        if (posprd != null)
+                        {
+                            posprd.Cantidad += body.Cantidad;
+                            _posInvPrd.Update(posprd);
+
+                        }
+                        else
+                        {
+                            PosinventarioproductoModel newPrd = new PosinventarioproductoModel();
+                            newPrd.Id = 0;
+                            newPrd.IdPos = body.IdPos;  
+                            newPrd.IdCodigo = body.IdCodigo;
+                            newPrd.Cantidad = body.Cantidad;
+                            newPrd.TipoProducto = prd.TipoProducto;
+                            newPrd.IdProductoCompuesto = prd.IdProductoCompuesto;
+                            newPrd.Nombre = prd.Nombre;
+                            newPrd.Descripcion = prd.Descripcion;
+                            newPrd.UnidadMedida  = (int)prd.UnidadMedida;
+                            newPrd.Lote = prd.Lote;
+                            newPrd.Olor = prd.Olor;
+                            newPrd.Color = prd.Color;
+                            newPrd.Textura = prd.Textura;
+                            newPrd.Tamano = prd.Tamano;
+                            newPrd.Peso = (float)prd.Peso;
+                            newPrd.Embalaje = (int)prd.Embalaje;
+                            newPrd.Temperatura = (int)prd.Temperatura;
+                            newPrd.ValorUnitario = (int)prd.ValorUnitario;
+                            newPrd.Descuento = (int)prd.Descuento;
+                            newPrd.Impuesto = (int)prd.Impuesto;
+                            newPrd.ValorIva = (float)prd.ValorIva;
+                            newPrd.FechaCreacion = (DateTime)prd.FechaCreacion;
+                            newPrd.DiasVencimiento = (int)prd.DiasVencimiento;
+                            newPrd.FechaVencimiento = (DateTime)prd.FechaVencimiento;
+                            newPrd.User = prd.User;
+                            newPrd.CreatedAt = (DateTime)prd.CreatedAt;
+                            newPrd.UpdatedAt = (DateTime)prd.UpdatedAt;
+
+                            _posInvPrd.Create(newPrd);
+                        }
+
                         var response = new
                         {
                             StatusCode = HttpStatusCode.Created,
@@ -163,7 +217,7 @@ namespace sgpimafaback.PosMovimientoInventario.Infraestructure.Controllers
                     }
                     else
                     {
-                        ErrMsjs.Add("Error: Intenta crear una movimiento con la misma ientificación de uno ya existente");
+                        ErrMsjs.Add("Error: Intenta crear una movimiento con la misma identificación de uno ya existente");
                         return BadRequest(new
                         {
                             StatusCode = HttpStatusCode.BadRequest,
