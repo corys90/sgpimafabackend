@@ -3,8 +3,8 @@ using System.Net;
 using Microsoft.AspNetCore.Mvc;
 using sgpimafaback.InventarioProducto.Domain.Entities;
 using sgpimafaback.InventarioProducto.Domain.Services;
-using sgpimafaback.PosInventarioProducto.Domain.Entities;
-using sgpimafaback.PosInventarioProducto.Domain.Services;
+using sgpimafaback.SedePos.Domain.Entities;
+using sgpimafaback.SedePos.Domain.Services;
 
 namespace sgpimafaback.InventarioProducto.Infraestructure.Controllers
 {
@@ -14,12 +14,14 @@ namespace sgpimafaback.InventarioProducto.Infraestructure.Controllers
     {
 
         private readonly inventarioproductoServices _Getlist;
+        private readonly SedeposServices _GetlistSedes;
         private readonly ILogger<inventarioproductoController> _logger;
 
-        public inventarioproductoController(inventarioproductoServices getList, ILogger<inventarioproductoController> logger)
+        public inventarioproductoController(inventarioproductoServices getList, SedeposServices sedeServices, ILogger<inventarioproductoController> logger)
         {
             _logger = logger;
             _Getlist = getList;
+            _GetlistSedes = sedeServices;
         }
 
         [HttpGet]
@@ -228,6 +230,14 @@ namespace sgpimafaback.InventarioProducto.Infraestructure.Controllers
             {
                 try
                 {
+                    //var sedes = _GetlistSedes.GetAll();
+                    //_logger.LogInformation($"\n No. pos: {sedes.ToList().Count()}");
+
+                    //foreach (SedeposModel sede in sedes)
+                    //{
+                    //    _logger.LogInformation($"\nSedes:   {Utilities.GetPropiedades(sede)}\n");
+                    //}
+
                     var resultado = _Getlist.Create(body);
                     if (resultado != null)
                     {
@@ -249,6 +259,7 @@ namespace sgpimafaback.InventarioProducto.Infraestructure.Controllers
                             Data = new inventarioproductoModel[] { }
                         });
                     }
+
                 }
                 catch (Exception e)
                 {

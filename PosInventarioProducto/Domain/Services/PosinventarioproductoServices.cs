@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using sgpimafaback.Context;
 using sgpimafaback.PosInventarioProducto.Domain.Entities;
+using System.Text.Json;
 
 namespace sgpimafaback.PosInventarioProducto.Domain.Services
 {
@@ -52,10 +53,34 @@ namespace sgpimafaback.PosInventarioProducto.Domain.Services
 
         public PosinventarioproductoModel GetByProductoId(int id)
         {
+            string jsonString = "";
             try
             {
                 var resultado = _DB.Posinventarioproductos.Where((PosinventarioproductoModel rec) => rec.IdCodigo == id);
                 if (resultado.Count() >= 0)
+                {
+                    return resultado.FirstOrDefault();
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            catch (Exception e)
+            {
+
+                throw new Exception($"Error: Interno del servidor o BD. Contacte al administrador del sistema - ({jsonString} - {e.Message})");
+
+            }
+        }
+
+        public PosinventarioproductoModel GetByPosProductoId(int posid, int id)
+        {
+            try
+            {
+                var resultado = _DB.Posinventarioproductos.Where((PosinventarioproductoModel rec) => (rec.IdCodigo == id) && (rec.IdPos == posid));
+                if (resultado.Count() > 0)
                 {
                     return resultado.FirstOrDefault();
                 }
@@ -77,7 +102,9 @@ namespace sgpimafaback.PosInventarioProducto.Domain.Services
         {
             try
             {
-                var prd = _DB.Posinventarioproductos.Where((PosinventarioproductoModel rec) => (rec.IdCodigo == data.IdCodigo) && (rec.IdPos == data.IdPos));
+                int cod = data.IdCodigo;
+                int posid = data.IdPos;
+                var prd = _DB.Posinventarioproductos.Where((PosinventarioproductoModel rec) => (rec.IdCodigo == cod) && (rec.IdPos == posid)).ToList();
                 if (prd.Any())
                 {
                     return null;
