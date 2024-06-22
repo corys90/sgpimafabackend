@@ -156,8 +156,8 @@ namespace sgpimafaback.PosMovimientoInventario.Infraestructure.Controllers
 
             if (ErrMsjs.Count <= 0)
             {
-                try
-                {
+                //try
+                //{
                     var resultado = _Getlist.Create(body);
                     if (resultado != null)
                     {
@@ -225,16 +225,16 @@ namespace sgpimafaback.PosMovimientoInventario.Infraestructure.Controllers
                             Data = new PosmovimientoinventarioModel[] { }
                         });
                     }
-                }
-                catch (Exception e)
-                {
-                    _logger.LogError($"posmovimientoinventarioController(Post): {e.Message}", e);
-                    return new ContentResult
-                    {
-                        StatusCode = (int?)HttpStatusCode.InternalServerError,
-                        Content = "Error: Interno del servidor o BD. Contacte al administrador del sistema",
-                    };
-                }
+                //}
+                //catch (Exception e)
+                //{
+                //    _logger.LogError($"posmovimientoinventarioController(Post): {e.Message}", e);
+                //    return new ContentResult
+                //    {
+                //        StatusCode = (int?)HttpStatusCode.InternalServerError,
+                //        Content = "Error: Interno del servidor o BD. Contacte al administrador del sistema",
+                //    };
+                //}
 
             }
             else

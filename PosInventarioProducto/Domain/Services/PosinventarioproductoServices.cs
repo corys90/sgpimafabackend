@@ -77,9 +77,9 @@ namespace sgpimafaback.PosInventarioProducto.Domain.Services
 
         public PosinventarioproductoModel GetByPosProductoId(int posid, int id)
         {
-            try
-            {
-                var resultado = _DB.Posinventarioproductos.Where((PosinventarioproductoModel rec) => (rec.IdCodigo == id) && (rec.IdPos == posid));
+            //try
+            //{
+                var resultado = _DB.Posinventarioproductos.Where((PosinventarioproductoModel rec) => (rec.IdCodigo == id) && (rec.IdPos == posid)).ToList();
                 if (resultado.Count() > 0)
                 {
                     return resultado.FirstOrDefault();
@@ -89,13 +89,13 @@ namespace sgpimafaback.PosInventarioProducto.Domain.Services
                     return null;
                 }
 
-            }
-            catch (Exception e)
-            {
+            //}
+            //catch (Exception e)
+            //{
 
-                throw new Exception($"Error: Interno del servidor o BD. Contacte al administrador del sistema - ({e.Message})");
+            //    throw new Exception($"Error: Interno del servidor o BD. Contacte al administrador del sistema - ({e.Message})");
 
-            }
+            //}
         }
 
         public PosinventarioproductoModel Create(PosinventarioproductoModel data)
