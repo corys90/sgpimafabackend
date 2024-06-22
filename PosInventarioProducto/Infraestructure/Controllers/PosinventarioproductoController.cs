@@ -127,8 +127,8 @@ namespace sgpimafaback.PosInventarioProducto.Infraestructure.Controllers
             if (ErrMsjs.Count <= 0)
             {
 
-                try
-                {
+                //try
+                //{
 
                     var resultado = _Getlist.GetByProductoId(Idd);
                     if (resultado != null)
@@ -150,16 +150,16 @@ namespace sgpimafaback.PosInventarioProducto.Infraestructure.Controllers
                             Data = new PosinventarioproductoModel[] { }
                         });
                     }
-                }
-                catch (Exception e)
-                {
-                    _logger.LogError($"PosinventarioproductoController(GetById {id}):   {e.Message}", e);
-                    return new ContentResult
-                    {
-                        StatusCode = (int?)HttpStatusCode.InternalServerError,
-                        Content = "Error: Interno del servidor o BD. Contacte al administrador del sistema",
-                    };
-                }
+                //}
+                //catch (Exception e)
+                //{
+                //    _logger.LogError($"PosinventarioproductoController(GetById {id}):   {e.Message}", e);
+                //    return new ContentResult
+                //    {
+                //        StatusCode = (int?)HttpStatusCode.InternalServerError,
+                //        Content = "Error: Interno del servidor o BD. Contacte al administrador del sistema",
+                //    };
+                //}
 
             }
             else
@@ -197,8 +197,8 @@ namespace sgpimafaback.PosInventarioProducto.Infraestructure.Controllers
             if (ErrMsjs.Count <= 0)
             {
 
-                try
-                {
+                //try
+                //{
 
                     var resultado = _Getlist.GetByPosProductoId(IdPos, Idd);
                     if (resultado != null)
@@ -220,16 +220,16 @@ namespace sgpimafaback.PosInventarioProducto.Infraestructure.Controllers
                             Data = new PosinventarioproductoModel[] { }
                         });
                     }
-                }
-                catch (Exception e)
-                {
-                    _logger.LogError($"PosinventarioproductoController(GetById {id}):   {e.Message}", e);
-                    return new ContentResult
-                    {
-                        StatusCode = (int?)HttpStatusCode.InternalServerError,
-                        Content = "Error: Interno del servidor o BD. Contacte al administrador del sistema",
-                    };
-                }
+                //}
+                //catch (Exception e)
+                //{
+                //    _logger.LogError($"PosinventarioproductoController(GetByPosProductoId {id}):   {e.Message}", e);
+                //    return new ContentResult
+                //    {
+                //        StatusCode = (int?)HttpStatusCode.InternalServerError,
+                //        Content = "Error: Interno del servidor o BD. Contacte al administrador del sistema",
+                //    };
+                //}
 
             }
             else
