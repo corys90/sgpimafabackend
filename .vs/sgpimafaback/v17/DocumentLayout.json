@@ -40,7 +40,7 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\corys\\Desktop\\SGPImafa\\sgpimafaback\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAEAAAAAAAAAAAAAgwE8AAAAAAAAA",
+              "ViewState": "AQIAAFIAAAAAAAAAAAAgwGAAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-22T17:04:40.951Z",
               "EditorCaption": ""
@@ -55,8 +55,7 @@
               "RelativeToolTip": "PosInventarioProducto\\Infraestructure\\Controllers\\PosinventarioproductoController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-21T20:12:55.477Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-21T20:12:55.477Z"
             },
             {
               "$type": "Document",
@@ -68,8 +67,7 @@
               "RelativeToolTip": "PosInventarioProducto\\Domain\\Services\\PosinventarioproductoServices.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAFsAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-21T21:07:34.711Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-21T21:07:34.711Z"
             },
             {
               "$type": "Document",
