@@ -30,6 +30,7 @@ namespace sgpimafaback
     {
         public static void Main(string[] args)
         {
+
             var builder = WebApplication.CreateBuilder(args);
 
 
@@ -73,10 +74,12 @@ namespace sgpimafaback
             //Configuracion CORS
             builder.Services.AddCors(options =>
             {
-                options.AddPolicy("MyCorsPolicy",
+                options.AddDefaultPolicy(
                     builder =>
                     {
-                        builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                        builder.WithMethods("*");
+                        builder.WithHeaders("*");
+                        builder.WithOrigins("*");
                     });
             });
 
@@ -91,7 +94,7 @@ namespace sgpimafaback
 
             app.UseHttpsRedirection();
 
-            app.UseCors("MyCorsPolicy");
+            app.UseCors();
 
             app.UseAuthorization();
 
