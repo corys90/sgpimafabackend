@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("sgpimafaback")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+93b605a45ac849ebb89ba89705c0b359556ddd44")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+65f49d423d9948fca3993854be20360e3e3dcf4b")]
 [assembly: System.Reflection.AssemblyProductAttribute("sgpimafaback")]
 [assembly: System.Reflection.AssemblyTitleAttribute("sgpimafaback")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

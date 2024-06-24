@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\corys\\Desktop\\SGPImafa\\sgpimafaback\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CBE556AE-650B-411D-B4AC-BCDBA6F63F73}|sgpimafaback.csproj|c:\\users\\corys\\desktop\\sgpimafa\\sgpimafaback\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{CBE556AE-650B-411D-B4AC-BCDBA6F63F73}|sgpimafaback.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{CBE556AE-650B-411D-B4AC-BCDBA6F63F73}|sgpimafaback.csproj|c:\\users\\corys\\desktop\\sgpimafa\\sgpimafaback\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBE556AE-650B-411D-B4AC-BCDBA6F63F73}|sgpimafaback.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CBE556AE-650B-411D-B4AC-BCDBA6F63F73}|sgpimafaback.csproj|c:\\users\\corys\\desktop\\sgpimafa\\sgpimafaback\\posinventarioproducto\\infraestructure\\controllers\\posinventarioproductocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -35,14 +35,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\corys\\Desktop\\SGPImafa\\sgpimafaback\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\corys\\Desktop\\SGPImafa\\sgpimafaback\\Properties\\launchSettings.json",
-              "RelativeToolTip": "Properties\\launchSettings.json",
-              "ViewState": "AQIAAAwAAAAAAAAAAADwvyQAAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-06-22T16:24:46.453Z",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\corys\\Desktop\\SGPImafa\\sgpimafaback\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\corys\\Desktop\\SGPImafa\\sgpimafaback\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAEAAAAAAAAAAAAAgwE8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-22T17:04:40.951Z",
               "EditorCaption": ""
             },
             {
